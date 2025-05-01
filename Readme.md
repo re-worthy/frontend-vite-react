@@ -1,5 +1,16 @@
 # Re:worthy
 
+## Stack
+
+- pnpm + node
+- Vite
+- React 19
+- eslint/prettier (linter, prettifier)
+- shadcn (base components)
+- tailwind (style-guides)
+- [Future] Zod (runtime validation)
+- [Future][Probably] storybook (visual representation of components in bare shell)
+
 ## Setup
 
 ```
@@ -16,19 +27,6 @@ npm i -g pnpm@10.10.0
 
 pnpm i
 ```
-
-## Stack
-
-- [Future] pnpm + node
-- [Future] Vite
-- [Future] React 18
-- [Future] Zod (runtime validation)
-- [Future] eslint/prettier (linter, prettifier)
-- [Future] shadcn (base components)
-- [Future] tailwind (style-guides)
-- [Future][Probably] storybook (visual representation of components in bare shell)
-
-## Project Structure (TBD)
 
 ## Git hooks
 
@@ -49,3 +47,5 @@ chmod +x ./.git-hooks/commit-msg
 - [DX] - improved Developer eXperience
 - [R] - refactor
 - [CUSTOM] - something unknown but so much wanted
+
+## Project Structure (TBD)
