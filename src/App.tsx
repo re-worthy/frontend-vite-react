@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 
 function App() {
     const [count, setCount] = useState(0);
-
     return (
         <div className="flex min-h-screen flex-col items-center justify-center gap-y-4 bg-gradient-to-t from-slate-950 to-neutral-800">
             <div className="flex justify-center gap-4">

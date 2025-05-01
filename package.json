@@ -8,14 +8,20 @@
     },
     "scripts": {
         "dev": "pnpm vite",
+        "preview": "pnpm exec vite preview",
         "build": "tsc -b && pnpm vite build",
+        "### lint": "",
         "lint": "pnpm run '/^lint:.*/'",
+        "lint:eslint": "pnpm exec eslint .",
+        "lint:prettier": "pnpm exec prettier . --check",
+        "### fix:lint": "",
         "fix:lint": "pnpm run '/^fix:lint:.*/'",
         "fix:lint:prettier": "pnpm exec prettier . --write",
-        "lint:prettier": "pnpm exec prettier . --check",
-        "lint:eslint": "pnpm exec eslint .",
         "fix:lint:eslint": "pnpm exec eslint . --fix",
-        "preview": "pnpm exec vite preview"
+        "### pre-commit:lint": "",
+        "pre-commit:lint": "pnpm run '/^pre-commit:lint:.*/'",
+        "pre-commit:lint:prettier": "pnpm exec prettier $(git diff --name-only --diff-filter d --staged | xargs) --check",
+        "pre-commit:lint:eslint": "pnpm exec eslint $(git diff --name-only --diff-filter d --staged | xargs)"
     },
     "dependencies": {
         "@radix-ui/react-slot": "1.2.0",
