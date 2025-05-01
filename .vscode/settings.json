@@ -1,0 +1,8 @@
+{
+    "files.autoSave": "onFocusChange",
+    "files.insertFinalNewline": true,
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "explicit"
+    }
+}
