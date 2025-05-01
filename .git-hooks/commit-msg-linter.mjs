@@ -1,20 +1,23 @@
-import fs from 'node:fs';
+/* eslint-disable */
 
-function getFirstLine(buffer) {
-    return buffer.toString().split('\n').shift();
-}
+import fs from "node:fs";
 
-const RED = '\x1b[0;31m';
-const GREEN = '\x1b[0;32m';
-const BLUE = '\x1b[1;34m';
+const RED = "\x1b[0;31m";
+const GREEN = "\x1b[0;32m";
+const BLUE = "\x1b[1;34m";
 
-const BOLD = '\x1b[1m';
+const BOLD = "\x1b[1m";
 
 /** End Of Style, removes all attributes (formatting and colors) */
-const EOS = '\x1b[0m';
+const EOS = "\x1b[0m";
 
-const commitMsgContent = fs.readFileSync('.git/COMMIT_EDITMSG', 'utf-8');
-const msg = getFirstLine(commitMsgContent).replace(/\s{2,}/g, ' ');
+const commitMsgContent = fs.readFileSync(".git/COMMIT_EDITMSG", "utf-8");
+const msg =
+    commitMsgContent
+        .toString()
+        .split("\n")
+        .shift()
+        ?.replace(/\s{2,}/g, " ") ?? "";
 
 const pattern = /^\[((BF)|(HF)|F|R|(DX)|(CUSTOM))\]: .+$/;
 
@@ -28,11 +31,11 @@ const prefixesInfo = `
 `.trim();
 
 const exampleMsg = [
-    '[F]: added flowcharts',
-    '[F]: added customization for flowcharts',
-    '[R]: Moved components from ~/cmp to ~/lib/cmp',
-    '[HF]: Expearence -> Experience',
-    '[BF]: Fixed cache invalidating on main page',
+    "[F]: added flowcharts",
+    "[F]: added customization for flowcharts",
+    "[R]: Moved components from ~/cmp to ~/lib/cmp",
+    "[HF]: Expearence -> Experience",
+    "[BF]: Fixed cache invalidating on main page",
 ];
 
 const successMsgs = [
@@ -73,7 +76,7 @@ const failMsgs = [
 ];
 
 const result = pattern.test(msg);
-const commitResultMsg = result ? 'SUCCESS' : 'FAILED';
+const commitResultMsg = result ? "SUCCESS" : "FAILED";
 
 if (result) {
     console.log(successMsgs[Math.floor(Math.random() * successMsgs.length)]);
